@@ -16,7 +16,7 @@ public class Vacante {
     private int id;
     private String nombre;
     private String descripcion;
-    private String destacado;
+    private boolean destacado;
     private String estatus;
     private double salario;
     private String imagen;
@@ -26,7 +26,7 @@ public class Vacante {
     public Vacante() {
     }
 
-    public Vacante(int id, String nombre, String descripcion, String destacado, String estatus, double salario, String imagen, Date fecha, Categoria categoria) {
+    public Vacante(int id, String nombre, String descripcion, boolean destacado, String estatus, double salario, String imagen, Date fecha, Categoria categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -64,11 +64,11 @@ public class Vacante {
         this.descripcion = descripcion;
     }
 
-    public String getDestacado() {
+    public boolean getDestacado() {
         return destacado;
     }
 
-    public void setDestacado(String destacado) {
+    public void setDestacado(boolean destacado) {
         this.destacado = destacado;
     }
 

@@ -10,8 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.stereotype.Service;
 
 /**
@@ -52,6 +50,9 @@ public class VacanteService implements IVacanteService {
                     + "o Metodologías agile");
             v1.setImagen("logo1");
             v1.setFecha(dateFormat.parse("12-12-2020"));
+            v1.setEstatus("Creado");
+            v1.setSalario(5000000);
+            v1.setDestacado(true);
             v1.setCategoria(null);
             
             Vacante v2 = new Vacante();
@@ -64,10 +65,33 @@ public class VacanteService implements IVacanteService {
                     + "Experiencia específica como desarrollador en Java, Base de datos Oracle.");
             v2.setImagen("logo2");
             v2.setFecha(dateFormat.parse("28-12-2020"));
+            v2.setEstatus("Creado");
+            v2.setSalario(4500000);
+            v2.setDestacado(false);
             v2.setCategoria(null);
+            
+            
+            Vacante v3 = new Vacante();
+            v3.setId(1);
+            v3.setNombre("Desarrollador Java");
+            v3.setDescripcion("Empresa de Tecnologia requiere Desarrollador Java ingenieros de Sistemas, ingeniero electronicos, ingeneiros de Software o afines con experiencia y conocimientos de 3 años en\n"
+            		+ "\n"
+            		+ "Spring Framework: Servicios REST,JPA, Spring Boot, Eclipse y/o Spring Tool Suite.Servidores de bases de datos de alguna de las siguientes: Postgresql, MS SQL Server, Oracle.\n"
+            		+ "\n"
+            		+ "sistema de control de versiones, pruebas automáticas e integración continua: GIT, Junit, Jenkins.Experiencia en proyectos ágiles de desarrollo.\n"
+            		+ "\n"
+            		+ "Altamente deseable: Conocimientos en Maven, SonarQube, Artifactory.\n"
+            		+ "\n");
+            v3.setImagen("logo3");
+            v3.setFecha(dateFormat.parse("28-12-2020"));
+            v3.setEstatus("Creado");
+            v3.setSalario(5500000);
+            v3.setDestacado(true);
+            v3.setCategoria(null);
             
             vacantes.add(v1);
             vacantes.add(v2);
+            vacantes.add(v3);
         } catch (ParseException ex) {
             ex.printStackTrace(System.out);
         }
