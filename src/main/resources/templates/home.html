@@ -48,7 +48,7 @@
             <div class="container"> 
                 <h2 class="font-weight-bold text-center text-capitalize">DESTACADOS</h2>
                 <hr>
-                <div class="row" th:each="vacante : ${vacantes}" th:if="vacante.destacado">
+                <div class="row" th:each="vacante : ${vacantes}" th:if="${vacante.destacado}">
                     <div class="col-md-3">            
                         <img class="rounded mx-auto d-block" th:src="@{images/{img}.png (img=${vacante.imagen})}" alt="Generic placeholder image" width="220" height="220">            
                     </div>
@@ -57,7 +57,7 @@
                         <h6 class="card-title" ><strong>Categoría: </strong> <span th:text="${vacante.categoria}"></span></h6>
                         <h6 class="card-title"><strong>Publicado: </strong> <span th:text="${#dates.format(vacante.fecha, 'dd-MM-yyyy')}"></span></h6>                
                         <p th:text="${vacante.descripcion}"></p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>            
+                        <p><a class="btn btn-secondary" th:href="@{/{id} (id=${vacante.id})}" role="button">View details &raquo;</a></p>            
                     </div>
                 </div>  
 

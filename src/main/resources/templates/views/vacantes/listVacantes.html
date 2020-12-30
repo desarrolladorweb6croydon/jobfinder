@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" th:href="@{/images/favicon.png}">
 
     <title>EmpleosApp | Listado de Ofertas de Trabajo</title>
     <!-- Bootstrap core CSS -->
@@ -24,11 +24,17 @@
     <main role="main">     
       <hr>
       <div class="container"> 
+      <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${msg=='ok'}">
+		 <strong>Vacante creada exitosamente</strong>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+	  </div>
 
         <div class="card">
           <h4 class="card-header"><strong>Listado de Ofertas de Trabajo</strong></h4>              
           <div class="card-body">
-            <a class="btn btn-primary" href="#" title="Crear nueva Oferta de Trabajo" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
+            <a class="btn btn-primary" th:href="@{/vacantes/formulario}" title="Crear nueva Oferta de Trabajo" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
             <hr>
             <table class="table table-hover">
               <thead class="thead-light">
@@ -46,7 +52,7 @@
                   <td>Backend</td>
                   <td th:text="${vacante.nombre}"></td>                  
                   <td th:text="${#dates.format(vacante.fecha, 'dd-MMM-yyyy')}"></td>
-                  <td th:text="${vacante.nombre}">Creada</td>
+                  <td th:text="${vacante.estatus}">Creada</td>
                   <td>SI</td>
                   <td>
                     <a href="#" class="btn btn-success btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>

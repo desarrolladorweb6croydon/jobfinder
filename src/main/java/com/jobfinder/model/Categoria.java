@@ -11,24 +11,24 @@ package com.jobfinder.model;
  */
 public class Categoria {
 
-    private int id;
+    private Integer id;
     private String nombre;
     private String descripcion;
 
     public Categoria() {
     }
 
-    public Categoria(int id, String nombre, String descripcion) {
+    public Categoria(Integer id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

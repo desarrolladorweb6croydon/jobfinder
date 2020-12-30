@@ -17,4 +17,6 @@ public interface IVacanteService {
     public List<Vacante> listarTodo();
     
     public void guardar(Vacante vacante);
+    
+    public Vacante buscarPorId(int id);
 }
