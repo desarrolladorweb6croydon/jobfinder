@@ -46,6 +46,7 @@ public class VacanteController {
 			return "views/vacantes/formVacante";
 		}
 		vacanteService.guardar(vacante);
+		System.out.println(vacante);
 		attributes.addFlashAttribute("msg","ok");
 		return "redirect:/vacantes";
 	}

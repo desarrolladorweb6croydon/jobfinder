@@ -5,6 +5,7 @@
  */
 package com.jobfinder.service;
 
+import com.jobfinder.model.Categoria;
 import com.jobfinder.model.Vacante;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,7 +26,7 @@ public class VacanteService implements IVacanteService {
 		try {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 			this.vacantes = new LinkedList<>();
-			// Categoria categoria = new Categoria();
+			Categoria categoria = new Categoria();
 			Vacante v1 = new Vacante();
 			v1.setId(1);
 			v1.setNombre("Desarrollador Full Stack");
@@ -34,7 +35,7 @@ public class VacanteService implements IVacanteService {
 					+ "\n" + "o Rest\n" + "\n" + "o Metodologías agile");
 			v1.setImagen("logo1");
 			v1.setFecha(dateFormat.parse("12-12-2020"));
-			v1.setEstatus("Creado");
+			v1.setEstatus("Creada");
 			v1.setSalario(5000000);
 			v1.setDestacado(true);
 			v1.setCategoria(null);
@@ -49,7 +50,7 @@ public class VacanteService implements IVacanteService {
 							+ "\n" + "Experiencia específica como desarrollador en Java, Base de datos Oracle.");
 			v2.setImagen("logo2");
 			v2.setFecha(dateFormat.parse("28-12-2020"));
-			v2.setEstatus("Creado");
+			v2.setEstatus("Aprobada");
 			v2.setSalario(4500000);
 			v2.setDestacado(false);
 			v2.setCategoria(null);
@@ -66,7 +67,7 @@ public class VacanteService implements IVacanteService {
 							+ "\n" + "Altamente deseable: Conocimientos en Maven, SonarQube, Artifactory.\n" + "\n");
 			v3.setImagen("logo3");
 			v3.setFecha(dateFormat.parse("28-12-2020"));
-			v3.setEstatus("Creado");
+			v3.setEstatus("Eliminada");
 			v3.setSalario(5500000);
 			v3.setDestacado(true);
 			v3.setCategoria(null);

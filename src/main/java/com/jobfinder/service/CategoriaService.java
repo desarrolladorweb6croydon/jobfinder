@@ -38,4 +38,19 @@ public class CategoriaService implements ICategoriaService {
 		lista.add(categoria);
 	}
 
+	@Override
+	public Categoria buscarPorId(int id) {
+		for (Categoria categoria : lista) {
+			if (categoria.getId() == id) {
+				return categoria;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public void eliminar(int id) {
+		Categoria categoria = buscarPorId(id);
+		lista.remove(categoria);
+	}
 }
