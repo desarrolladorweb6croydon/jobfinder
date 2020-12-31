@@ -5,7 +5,6 @@
  */
 package com.jobfinder.service;
 
-import com.jobfinder.model.Categoria;
 import com.jobfinder.model.Vacante;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,7 +25,6 @@ public class VacanteService implements IVacanteService {
 		try {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 			this.vacantes = new LinkedList<>();
-			Categoria categoria = new Categoria();
 			Vacante v1 = new Vacante();
 			v1.setId(1);
 			v1.setNombre("Desarrollador Full Stack");

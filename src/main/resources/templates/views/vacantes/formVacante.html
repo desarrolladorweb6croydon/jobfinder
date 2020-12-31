@@ -30,7 +30,7 @@
         <div class="card">
           <h4 class="card-header"><strong>Datos de la oferta de trabajo</strong></h4>              
           <div class="card-body">
-            <form th:action="@{/vacantes/guardar}" th:object="${vacante}" method="post">  
+            <form th:action="@{/vacantes/guardar}" th:object="${vacante}" method="post" enctype="multipart/form-data">  
             <div class="alert alert-danger alert-dismissible fade show" role="alert" th:if="${#fields.hasErrors('*')}">
             	<h2>Errores:</h2>
 			 	<ul th:each="error : ${#fields.errors('*')}">
@@ -64,7 +64,6 @@
                     </select>
                   </div>
                 </div>
-
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="estatus">Estatus</label>
@@ -103,7 +102,7 @@
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="archivoImagen">Imagen</label>
-                    <input type="file" class="form-control-file" th:field="*{imagen}" name="archivoImagen" id="archivoImagen">
+                    <input type="file" class="form-control-file" name="archivoImagen" id="archivoImagen" >
                   </div>
                 </div>
               </div> 
